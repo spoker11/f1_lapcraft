@@ -1,66 +1,68 @@
-# Lapcraft F1
+Lapcraft F1
 
-**Lapcraft F1** je open-source analytická platforma pro vizualizaci a porovnávání dat z formule 1 s využitím knihovny FastF1.  
+    Lapcraft F1 je open-source analytická platforma pro vizualizaci a porovnávání dat z formule 1 s využitím knihovny FastF1.
 
+🚦 Hlavní funkce
 
+    Interaktivní graf časů na kolo
 
-## Hlavní funkce
+        Barevné rozlišení podle směsi pneumatik
 
-- **Interaktivní graf časů na kolo**  
-  - Barevné rozlišení podle směsi pneumatik
-  - Zobrazení detailních informací po najetí myší (čas, směs)
-  - Výběr libovolného závodu, jezdce a další
+        Zobrazení detailních informací po najetí myší (čas, směs)
 
-- **Porovnání telemetrie dvou jezdců**  
-  - Přehledné grafy: rychlost, plyn, brzda, otáčky, rychlostní stupeň, DRS
-  - Synchronizované srovnání po celé délce okruhu
-  - Volba konkrétního kola pro každého jezdce zvlášť
+        Výběr libovolného závodu, jezdce a další
 
----
+    Porovnání telemetrie dvou jezdců
 
-## Jak aplikaci spustit
+        Přehledné grafy: rychlost, plyn, brzda, otáčky, rychlostní stupeň, DRS
 
-1. **(Doporučeno)** Použij virtuální prostředí  
-   (např. vytvoříš příkazem `python -m venv .venv` a aktivuješ podle svého systému)
+        Synchronizované srovnání po celé délce okruhu
 
-2. **Nainstaluj potřebné knihovny:**  
-    ```bash
-    pip install -r requirements.txt
-    ```
+        Volba konkrétního kola pro každého jezdce zvlášť
 
-3. **Spusť aplikaci:**  
-    ```bash
+    Pořadí týmů (konstruktérské body)
+
+        Přehled aktuálních bodů týmů F1 v tabulce a grafu
+
+        Barevné rozlišení týmů, automatická aktualizace dle nejnovějších dat
+
+🏁 Jak aplikaci spustit
+
+    (Doporučeno) Vytvoř virtuální prostředí:
+
+python -m venv .venv
+
+Aktivuj podle svého systému.
+
+Nainstaluj potřebné knihovny:
+
+pip install -r requirements.txt
+
+Spusť aplikaci:
+
     streamlit run app.py
-    ```
 
-4. V prohlížeči otevři [http://localhost:8501](http://localhost:8501)
+    V prohlížeči otevři http://localhost:8501
 
+📦 Použité knihovny
 
----
+    FastF1
 
-## Použité knihovny
+    Streamlit
 
-- [FastF1](https://theoehrly.github.io/Fast-F1/)
-- [Streamlit](https://streamlit.io/)
-- [Plotly](https://plotly.com/python/)
-- numpy, scipy, pandas
+    Plotly
 
-Kompletní seznam najdete v souboru [requirements.txt](requirements.txt).
+    numpy, scipy, pandas
 
-
----
-
-## Licence
+Kompletní seznam najdete v souboru requirements.txt.
+📝 Licence
 
 Kód můžete volně používat, upravovat a šířit.
+👨‍💻 Autor a právní informace
 
----
-
-## Autor a právní informace
-
-Projekt vytvořil: **Jaroslav Chládek**  
+Projekt vytvořil: Jaroslav Chládek
 Rok: 2025
 
-Lapcraft F1 je neoficiální komunitní nástroj určený pro analytické a vzdělávací účely v oblasti motorsportu.  
-Aplikace ani její autor nejsou nijak spojeni s organizací Formula 1, FIA, FOM nebo s žádným závodním týmem.  
-Veškerá použitá data jsou veřejně dostupná prostřednictvím platformy FastF1 a slouží pouze k nekomerčnímu využití.
+    Lapcraft F1 je neoficiální komunitní nástroj určený pro analytické a vzdělávací účely v oblasti motorsportu.
+    Aplikace ani její autor nejsou nijak spojeni s organizací Formula 1, FIA, FOM nebo s žádným závodním týmem.
+    Veškerá použitá data jsou veřejně dostupná prostřednictvím platformy FastF1 a slouží pouze k nekomerčnímu využití.
