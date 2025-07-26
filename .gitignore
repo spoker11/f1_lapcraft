@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtuální prostředí
+.venv/
+
+# FastF1 cache
+cache/
+*.ff1pkl
+*.sqlite
+
+# IDE a OS
+.idea/
+.vscode/
+.DS_Store
