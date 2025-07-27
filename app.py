@@ -3,8 +3,6 @@ from f1viz.graf_kola import show_graf_kola
 from f1viz.telemetrie import show_telemetrie
 from f1viz.t_performance import show_team_standings
 
-st.set_page_config(page_title="Lapcraft F1", layout="wide")
-
 # --- Styl pro zarovnání záložek a nadpisu ---
 st.markdown("""
     <style>
