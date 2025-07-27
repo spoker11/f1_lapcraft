@@ -40,26 +40,26 @@ def show_team_standings():
     df = pd.DataFrame(data)
     colors = [TEAM_COLORS.get(team, "#888888") for team in df["Tým"]]
 
-    col1, col2, col3 = st.columns([1, 2.2, 1])
-    with col2:
-        st.dataframe(df, hide_index=True, use_container_width=True)
+    # Tabulka přes celou šířku
+    st.dataframe(df, hide_index=True, use_container_width=True)
 
-        fig = go.Figure(
-            data=[go.Bar(
-                x=df["Tým"],
-                y=df["Body"],
-                marker_color=colors
-            )]
-        )
-        fig.update_layout(
-            xaxis_title="Tým",
-            yaxis_title="Body",
-            plot_bgcolor="#191c24",
-            paper_bgcolor="#191c24",
-            font=dict(color="#fff", family="Segoe UI"),
-            margin=dict(t=30, b=30, l=30, r=10)
-        )
-        st.plotly_chart(fig, use_container_width=True)
+    # Sloupcový graf přes celou šířku
+    fig = go.Figure(
+        data=[go.Bar(
+            x=df["Tým"],
+            y=df["Body"],
+            marker_color=colors
+        )]
+    )
+    fig.update_layout(
+        xaxis_title="Tým",
+        yaxis_title="Body",
+        plot_bgcolor="#191c24",
+        paper_bgcolor="#191c24",
+        font=dict(color="#fff", family="Segoe UI"),
+        margin=dict(t=30, b=30, l=30, r=10)
+    )
+    st.plotly_chart(fig, use_container_width=True)
 
 
 
