@@ -2,6 +2,7 @@ import streamlit as st
 from f1viz.graf_kola import show_graf_kola
 from f1viz.telemetrie import show_telemetrie
 from f1viz.t_performance import show_team_standings
+from f1viz.kalendar_f1 import show_calendar
 
 # --- Styl pro zarovnání záložek a nadpisu ---
 st.markdown("""
@@ -28,7 +29,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Tabs nativně, pod nadpisem ---
-tab1, tab2, tab3 = st.tabs(["Graf časů na kolo", "Porovnání telemetrie", "Pořadí týmů"])
+tab1, tab2, tab3, tab4 = st.tabs([
+    "Graf časů na kolo",
+    "Porovnání telemetrie",
+    "Pořadí týmů",
+    "Příští závod"      # NOVÁ záložka!
+])
 
 with tab1:
     show_graf_kola()
@@ -36,6 +42,8 @@ with tab2:
     show_telemetrie()
 with tab3:
     show_team_standings()
+with tab4:
+    show_calendar()
 
 # Copyright na střed
 st.markdown(
@@ -44,3 +52,4 @@ st.markdown(
     "</p>",
     unsafe_allow_html=True
 )
+
