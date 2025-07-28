@@ -1,49 +1,63 @@
-Lapcraft F1
+🏎️ Lapcraft F1
 
-    Lapcraft F1 je open-source analytická platforma pro vizualizaci a porovnávání dat z formule 1 s využitím knihovny FastF1.
-
+Lapcraft F1 je open-source analytická platforma pro vizualizaci a porovnávání dat z formule 1 s využitím knihovny FastF1.
+Projekt je navržený pro fanoušky, studenty i analytiky, kteří chtějí objevovat zákulisí F1 dat.
 🚦 Hlavní funkce
+1. Graf časů na kolo
 
-    Interaktivní graf časů na kolo
+    Interaktivní zobrazení časů na kolo pro vybraného jezdce a závod
 
-        Barevné rozlišení podle směsi pneumatik
+    Barevné rozlišení podle směsi pneumatik
 
-        Zobrazení detailních informací po najetí myší (čas, směs)
+    Podrobné informace (čas, směs) při najetí myší na bod
 
-        Výběr libovolného závodu, jezdce a další
+    Možnost výběru ročníku, závodu, jezdce a session
 
-    Porovnání telemetrie dvou jezdců
+2. Porovnání telemetrie dvou jezdců
 
-        Přehledné grafy: rychlost, plyn, brzda, otáčky, rychlostní stupeň, DRS
+    Srovnávací grafy: rychlost, plyn, brzda, otáčky, rychlostní stupeň, DRS
 
-        Synchronizované srovnání po celé délce okruhu
+    Data zvolené session a konkrétního kola pro oba jezdce
 
-        Volba konkrétního kola pro každého jezdce zvlášť
+    Synchronizované zobrazení po celé délce okruhu
 
-    Pořadí týmů (konstruktérské body)
+3. Přehled pořadí týmů (konstruktérské body)
 
-        Přehled aktuálních bodů týmů F1 v tabulce a grafu
+    Tabulka a graf bodového zisku týmů v aktuální sezoně
 
-        Barevné rozlišení týmů, automatická aktualizace dle nejnovějších dat
+    Automatická aktualizace podle nejnovějších dat
+
+    Barevné rozlišení podle týmových barev
+
+4. Kalendář a countdown na příští závod
+
+    Stránka s informacemi o následujícím závodě
+
+    Reálný odpočet do startu
+
+    Přehled základních detailů (okruh, čas startu...)
+
+5. Vizualizace bodového podílu týmových kolegů
+
+    Porovnání rozložení bodů mezi jezdci v rámci týmu
+
+    Barevná vizualizace a jednoduché porovnání
 
 🏁 Jak aplikaci spustit
-
-    (Doporučeno) Vytvoř virtuální prostředí:
+1. Vytvoř virtuální prostředí (doporučeno)
 
 python -m venv .venv
 
-Aktivuj podle svého systému.
-
-Nainstaluj potřebné knihovny:
+Aktivuj podle svého systému (např. source .venv/bin/activate nebo .venv\Scripts\activate).
+2. Nainstaluj požadované knihovny
 
 pip install -r requirements.txt
 
-Spusť aplikaci:
+3. Spusť aplikaci
 
-    streamlit run app.py
+streamlit run app.py
 
-    V prohlížeči otevři http://localhost:8501
-
+A otevři http://localhost:8501 ve svém prohlížeči.
 📦 Použité knihovny
 
     FastF1
@@ -53,14 +67,14 @@ Spusť aplikaci:
     Plotly
 
     numpy, scipy, pandas
+    Kompletní seznam najdete v souboru requirements.txt.
 
-Kompletní seznam najdete v souboru requirements.txt.
 📝 Licence
 
-Kód můžete volně používat, upravovat a šířit.
+Projekt je k dispozici pod otevřenou licencí. Kód můžete volně používat, upravovat i šířit.
 👨‍💻 Autor a právní informace
 
-Projekt vytvořil: Jaroslav Chládek
+Autor: Jaroslav Chládek
 Rok: 2025
 
     Lapcraft F1 je neoficiální komunitní nástroj určený pro analytické a vzdělávací účely v oblasti motorsportu.
