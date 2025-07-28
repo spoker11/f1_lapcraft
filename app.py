@@ -38,11 +38,11 @@ st.markdown("""
 
 # --- Tabs nativně, pod nadpisem ---
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "Graf časů na kolo",
-    "Porovnání telemetrie",
+    "Graf časů",
+    "Telemetrie",
     "Pořadí týmů",
     "Příští závod",
-    "Podíl bodů týmových kolegů"
+    "Body kolegů"
 ])
 
 with tab1:
@@ -63,5 +63,6 @@ st.markdown(
     "</p>",
     unsafe_allow_html=True
 )
+
 
 
