@@ -20,7 +20,16 @@ def show_calendar():
 
     st.markdown("""
     <style>
-    .nextup-main { text-align:center; color:#fff; font-size:2.7em; font-weight:800; margin-bottom:0.1em;}
+    .f1-subtitle {
+        text-align: center;
+        color: #fff;
+        font-size: 2.1em;
+        font-weight: 800;
+        margin-bottom: 0.20em;
+        margin-top: 0.05em;
+        letter-spacing: 0.1px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
     .nextup-title { text-align:center; color:#fff; font-size:1.5em; font-weight:700; margin-bottom:0.08em;}
     .nextup-timer { display:flex; justify-content:center; gap:25px; margin-bottom:0.8em; margin-top:1.5em;}
     .nextup-box { background:#18191c; border-radius:18px; padding:12px 26px; color:#fff; font-family:monospace;
@@ -29,7 +38,8 @@ def show_calendar():
     </style>
     """, unsafe_allow_html=True)
 
-    st.markdown(f"<div class='nextup-main'>{next_race_name}</div>", unsafe_allow_html=True)
+    # --- NÁHRADA --- (stejný styl jako ostatní nadpisy)
+    st.markdown(f"<div class='f1-subtitle'>{next_race_name}</div>", unsafe_allow_html=True)
     st.markdown(f"<div class='nextup-title'>{next_race_title}</div>", unsafe_allow_html=True)
     st.markdown(
         "<div class='nextup-timer'>"

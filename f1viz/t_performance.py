@@ -32,10 +32,22 @@ data = {
 }
 
 def show_team_standings():
-    st.markdown(
-        "<h2 style='text-align: center; margin-top: 1.2em;'>Pohár konstruktérů 2025</h2>",
-        unsafe_allow_html=True
-    )
+    # --- Sjednocený podnadpis ---
+    st.markdown("""
+        <style>
+            .f1-subtitle {
+                text-align: left;
+                color: #fff;
+                font-size: 2.1em;
+                font-weight: 800;
+                margin-bottom: 0.20em;
+                margin-top: 0.05em;
+                letter-spacing: 0.1px;
+                font-family: 'Segoe UI', Arial, sans-serif;
+            }
+        </style>
+        <div class='f1-subtitle'>Pohár konstruktérů 2025</div>
+    """, unsafe_allow_html=True)
 
     df = pd.DataFrame(data)
     colors = [TEAM_COLORS.get(team, "#888888") for team in df["Tým"]]
@@ -60,6 +72,7 @@ def show_team_standings():
         margin=dict(t=30, b=30, l=30, r=10)
     )
     st.plotly_chart(fig, use_container_width=True)
+
 
 
 
