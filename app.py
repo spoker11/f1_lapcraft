@@ -4,6 +4,13 @@ from f1viz.telemetrie import show_telemetrie
 from f1viz.t_performance import show_team_standings
 from f1viz.kalendar_f1 import show_calendar
 
+# --- Favicon a nadpis záložky ---
+st.set_page_config(
+    page_title="F1 LapCraft",
+    page_icon="🏎️",
+
+)
+
 # --- Styl pro zarovnání záložek a nadpisu ---
 st.markdown("""
     <style>
@@ -33,7 +40,7 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "Graf časů na kolo",
     "Porovnání telemetrie",
     "Pořadí týmů",
-    "Příští závod"      # NOVÁ záložka!
+    "Příští závod"
 ])
 
 with tab1:

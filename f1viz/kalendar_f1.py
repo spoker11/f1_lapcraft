@@ -5,7 +5,7 @@ def show_calendar():
     # --- Nastav informace o dalším závodě ---
     next_race_name = "Velká cena Maďarska"
     next_race_title = "Začíná za:"
-    next_race_date = "2025-07-27"
+    next_race_date = "2025-08-03"
     next_race_time = "15:00"   # 24h format
 
     # Sestav datetime pro závod
