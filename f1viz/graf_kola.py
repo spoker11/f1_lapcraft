@@ -4,7 +4,15 @@ import plotly.graph_objects as go
 import time
 
 from f1viz.data_loading import get_schedule, get_gp_names, get_session
-from f1viz.utils import TEAM_COLORS, color_dict, emoji_dict, format_laptime_simple
+from f1viz.utils import TEAM_COLORS, color_dict, emoji_dict
+
+def format_laptime_simple(seconds):
+    # Funkce vrátí čas ve formátu M:SS.sss (např. 1:39.532)
+    if np.isnan(seconds):
+        return "-"
+    m = int(seconds // 60)
+    s = seconds % 60
+    return f"{m}:{s:06.3f}"
 
 def show_graf_kola():
     st.subheader("Graf časů na kolo")
@@ -42,7 +50,6 @@ def show_graf_kola():
         st.warning("Pro zvoleného jezdce nejsou k dispozici žádná platná kola.")
         return
 
-    # --- Vždy zobraz spinner na minimálně 1 sekundu během generování grafu ---
     with st.spinner("Načítám data a připravuji graf…"):
         best_lap = laps['LapTime'].min()
         laps['is_outlier'] = laps['LapTime'] > (best_lap * 1.10)
@@ -61,8 +68,9 @@ def show_graf_kola():
         compounds = filtered_laps['Compound'].values
 
         marker_colors = [color_dict.get(c, "#888") for c in compounds]
+        # --- UPRAVENO: hovertext pouze Čas ve formátu M:SS.sss a compound + emoji ---
         hover_texts = [
-            f"Kolo: {lap_numbers[i]}<br>Čas: {format_laptime_simple(lap_times[i], ms=False)}<br>Pneumatiky: {compounds[i]} {emoji_dict.get(compounds[i], '')}"
+            f"Kolo: {lap_numbers[i]}<br>Čas: {format_laptime_simple(lap_times[i])}<br>{compounds[i]} {emoji_dict.get(compounds[i], '')}"
             for i in range(len(lap_numbers))
         ]
 
@@ -79,11 +87,12 @@ def show_graf_kola():
                 line=dict(width=1, color='#222')
             ),
             name=driver,
-            hovertemplate=hover_texts
+            hovertemplate='%{customdata}',
+            customdata=hover_texts
         ))
 
         yticks = np.linspace(min(lap_times), max(lap_times), 8)
-        yticklabels = [format_laptime_simple(v, ms=False) for v in yticks]
+        yticklabels = [format_laptime_simple(v) for v in yticks]
 
         fig.update_layout(
             margin=dict(l=40, r=40, t=40, b=40),
@@ -99,6 +108,7 @@ def show_graf_kola():
             hoverlabel=dict(font_size=15)
         )
 
-        time.sleep(1)  # Spinner bude vždy viditelný aspoň 1 sekundu
+        time.sleep(1)
         st.plotly_chart(fig, use_container_width=True)
+
 

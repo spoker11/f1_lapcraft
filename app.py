@@ -8,7 +8,6 @@ from f1viz.kalendar_f1 import show_calendar
 st.set_page_config(
     page_title="F1 LapCraft",
     page_icon="🏎️",
-
 )
 
 # --- Styl pro zarovnání záložek a nadpisu ---

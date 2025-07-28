@@ -36,7 +36,6 @@ def show_telemetrie():
         laps1 = session.laps.pick_driver(driver1) if session and drivers and driver1 != "N/A" else None
         laps2 = session.laps.pick_driver(driver2) if session and drivers and driver2 != "N/A" else None
 
-        # ---- OPRAVA: převedeme na int aby byly v selectboxu čísla kol jako celá čísla ----
         lap_nums1 = laps1["LapNumber"].astype(int).tolist() if laps1 is not None else []
         lap_nums2 = laps2["LapNumber"].astype(int).tolist() if laps2 is not None else []
 
@@ -60,9 +59,7 @@ def show_telemetrie():
         st.warning("Nejsou dostupná data pro vybrané jezdce.")
         return
 
-    # ---- Spinner pro vizuální efekt ----
     with st.spinner("Načítám data a připravuji graf…"):
-        # --- Výpočet a generování grafu ---
         lap1_row = laps1[laps1["LapNumber"] == lap1].iloc[0]
         lap2_row = laps2[laps2["LapNumber"] == lap2].iloc[0]
 
@@ -103,35 +100,39 @@ def show_telemetrie():
             x=dist_common, y=speed1, line=dict(color=tcolor1),
             name=lname1,
             legendgroup="1",
-            hovertemplate="%{y:.0f} km/h<br>Vzdálenost: %{x:.0f} m"
+            hovertemplate="%{y:.0f} km/h"
         ), row=1, col=1)
         fig.add_trace(go.Scatter(
             x=dist_common, y=speed2, line=dict(color=tcolor2),
             name=lname2,
             legendgroup="2",
-            hovertemplate="%{y:.0f} km/h<br>Vzdálenost: %{x:.0f} m"
+            hovertemplate="%{y:.0f} km/h"
         ), row=1, col=1)
         # PLYN
         fig.add_trace(go.Scatter(
             x=dist_common, y=throttle1, line=dict(color=tcolor1, dash="dot"),
             showlegend=False,
-            hovertemplate="%{y:.0f} %<br>Vzdálenost: %{x:.0f} m"
+            name="",
+            hovertemplate="%{y:.0f} %"
         ), row=2, col=1)
         fig.add_trace(go.Scatter(
             x=dist_common, y=throttle2, line=dict(color=tcolor2, dash="dot"),
             showlegend=False,
-            hovertemplate="%{y:.0f} %<br>Vzdálenost: %{x:.0f} m"
+            name="",
+            hovertemplate="%{y:.0f} %"
         ), row=2, col=1)
         # BRZDA
         fig.add_trace(go.Scatter(
             x=dist_common, y=brake1, line=dict(color=tcolor1),
             showlegend=False,
+            name="",
             hovertemplate="%{customdata}",
             customdata=[("ON" if v > 0.5 else "OFF") for v in brake1]
         ), row=3, col=1)
         fig.add_trace(go.Scatter(
             x=dist_common, y=brake2, line=dict(color=tcolor2),
             showlegend=False,
+            name="",
             hovertemplate="%{customdata}",
             customdata=[("ON" if v > 0.5 else "OFF") for v in brake2]
         ), row=3, col=1)
@@ -139,34 +140,40 @@ def show_telemetrie():
         fig.add_trace(go.Scatter(
             x=dist_common, y=rpm1, line=dict(color=tcolor1),
             showlegend=False,
-            hovertemplate="%{y:.0f} RPM<br>Vzdálenost: %{x:.0f} m"
+            name="",
+            hovertemplate="%{y:.0f} RPM"
         ), row=4, col=1)
         fig.add_trace(go.Scatter(
             x=dist_common, y=rpm2, line=dict(color=tcolor2),
             showlegend=False,
-            hovertemplate="%{y:.0f} RPM<br>Vzdálenost: %{x:.0f} m"
+            name="",
+            hovertemplate="%{y:.0f} RPM"
         ), row=4, col=1)
         # RYCHLOSTNÍ STUPEŇ
         fig.add_trace(go.Scatter(
             x=dist_common, y=gear1, line=dict(color=tcolor1),
             showlegend=False,
-            hovertemplate="Stupeň: %{y:.0f}<br>Vzdálenost: %{x:.0f} m"
+            name="",
+            hovertemplate="Stupeň: %{y:.0f}"
         ), row=5, col=1)
         fig.add_trace(go.Scatter(
             x=dist_common, y=gear2, line=dict(color=tcolor2),
             showlegend=False,
-            hovertemplate="Stupeň: %{y:.0f}<br>Vzdálenost: %{x:.0f} m"
+            name="",
+            hovertemplate="Stupeň: %{y:.0f}"
         ), row=5, col=1)
         # DRS
         fig.add_trace(go.Scatter(
             x=dist_common, y=drs1, line=dict(color=tcolor1),
             showlegend=False,
+            name="",
             hovertemplate="%{customdata}",
             customdata=[("ON" if v > 0.5 else "OFF") for v in drs1]
         ), row=6, col=1)
         fig.add_trace(go.Scatter(
             x=dist_common, y=drs2, line=dict(color=tcolor2),
             showlegend=False,
+            name="",
             hovertemplate="%{customdata}",
             customdata=[("ON" if v > 0.5 else "OFF") for v in drs2]
         ), row=6, col=1)
@@ -188,5 +195,5 @@ def show_telemetrie():
         fig['layout']['yaxis6']['title'] = "DRS"
         fig['layout']['xaxis6']['title'] = "Vzdálenost na kolo (m)"
 
-        time.sleep(1)  # Spinner je vidět minimálně 1 sekundu
+        time.sleep(1)
         st.plotly_chart(fig, use_container_width=True)
