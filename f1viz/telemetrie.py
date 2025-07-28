@@ -21,9 +21,9 @@ def show_telemetrie():
         session_short = session_type
 
         session, err = get_session(year, gp_name, session_short, schedule)
-        drivers = sorted(session.laps["Driver"].unique()) if session and not err else []
-        col1, col2 = st.columns(2)
+        drivers = session.laps['Driver'].unique().tolist() if session and not err else []
 
+        col1, col2 = st.columns(2)
         with col1:
             driver1 = st.selectbox("První jezdec", drivers if drivers else ["N/A"], index=0)
         with col2:
@@ -41,9 +41,17 @@ def show_telemetrie():
 
         col1, col2 = st.columns(2)
         with col1:
-            lap1 = st.selectbox(f"Kolo pro {driver1}", lap_nums1 if lap_nums1 else [1])
+            lap1 = st.selectbox(
+                f"Kolo pro {driver1}",
+                lap_nums1 if lap_nums1 else [1],
+                key=f"lap1_{driver1}"  # KLÍČ závislý na jménu jezdce
+            )
         with col2:
-            lap2 = st.selectbox(f"Kolo pro {driver2}", lap_nums2 if lap_nums2 else [1])
+            lap2 = st.selectbox(
+                f"Kolo pro {driver2}",
+                lap_nums2 if lap_nums2 else [1],
+                key=f"lap2_{driver2}"  # KLÍČ závislý na jménu jezdce
+            )
 
         submitted = st.form_submit_button("Zobrazit")
 
@@ -197,3 +205,4 @@ def show_telemetrie():
 
         time.sleep(1)
         st.plotly_chart(fig, use_container_width=True)
+
