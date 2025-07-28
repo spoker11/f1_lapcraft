@@ -28,7 +28,7 @@ data = {
         "Haas F1 Team",
         "Alpine F1 Team"
     ],
-    "Body": [460, 222, 210, 172, 59, 41, 36, 36, 29, 19]
+    "Body": [516, 248, 220, 192, 70, 43, 41, 36, 35, 20]
 }
 
 def show_team_standings():
