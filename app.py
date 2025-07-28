@@ -5,38 +5,45 @@ from f1viz.t_performance import show_team_standings
 from f1viz.kalendar_f1 import show_calendar
 from f1viz.compare_drivers import show_points_share
 
-
-# --- Favicon a nadpis záložky ---
+# --- Nastavení stránky, favicon a rozložení ---
 st.set_page_config(
-    page_title="F1 LapCraft",
+    page_title="Lapcraft F1",
     page_icon="🏎️",
 )
 
-# --- Styl pro zarovnání záložek a nadpisu ---
+# --- Globální styl (sjednocení vzhledu) ---
 st.markdown("""
     <style>
-    .centered {text-align: center; margin-bottom: 0.3em;}
-    div[data-testid="stTabs"] > div {justify-content: center;}
-    button[data-baseweb="tab"] {
-        font-size: 1.10rem; padding: 0.25em 2em; margin-right: 0.8em;
-    }
-    button[data-baseweb="tab"][aria-selected="true"] {
-        background-color: #e30613 !important;
-        color: white !important;
-        border-radius: 7px 7px 0 0 !important;
-        font-weight: 700;
-    }
+        html, body, .main {background-color: #191c21 !important;}
+        .f1-title {
+            text-align: center;
+            margin-bottom: 0.2em;
+            color: #e30613;
+            font-size: 2.25em;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        div[data-testid="stTabs"] > div {justify-content: center;}
+        button[data-baseweb="tab"] {
+            font-size: 1.10rem; padding: 0.25em 2em; margin-right: 0.8em;
+        }
+        button[data-baseweb="tab"][aria-selected="true"] {
+            background-color: #e30613 !important;
+            color: white !important;
+            border-radius: 7px 7px 0 0 !important;
+            font-weight: 700;
+        }
     </style>
 """, unsafe_allow_html=True)
 
-# Nadpis na střed s odkazem (refresh)
-st.markdown("""
-    <h1 class='centered'>
-        <a href='/' style='color: #e30613; text-decoration: none;'>Lapcraft F1</a>
-    </h1>
-""", unsafe_allow_html=True)
+# --- Jednotný nadpis (refresh při kliknutí) ---
+st.markdown(
+    "<div class='f1-title'><a href='/' style='color: #e30613; text-decoration: none;'>Lapcraft F1</a></div>",
+    unsafe_allow_html=True
+)
 
-# --- Tabs nativně, pod nadpisem ---
+# --- Hlavní navigace ---
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "Graf časů",
     "Telemetrie",
@@ -56,13 +63,14 @@ with tab4:
 with tab5:
     show_points_share()
 
-# Copyright na střed
+# --- Copyright ---
 st.markdown(
-    "<p style='text-align: center; color: #888888; font-size: 16px; margin-top: 36px;'>"
-    "© 2025 Jaroslav Chládek"
+    "<p style='text-align: center; color: #888888; font-size: 15px; margin-top: 36px;'>"
+    "© 2025 Jaroslav Chládek | Lapcraft F1"
     "</p>",
     unsafe_allow_html=True
 )
+
 
 
 

@@ -9,7 +9,22 @@ from f1viz.data_loading import get_schedule, get_gp_names, get_session
 from f1viz.utils import TEAM_COLORS
 
 def show_telemetrie():
-    st.header("Porovnání telemetrie")
+    # --- Sjednocený podnadpis ---
+    st.markdown("""
+        <style>
+            .f1-subtitle {
+                text-align: left;
+                color: #fff;
+                font-size: 2.1em;
+                font-weight: 800;
+                margin-bottom: 0.20em;
+                margin-top: 0.05em;
+                letter-spacing: 0.1px;
+                font-family: 'Segoe UI', Arial, sans-serif;
+            }
+        </style>
+        <div class='f1-subtitle'>Porovnání telemetrie</div>
+    """, unsafe_allow_html=True)
 
     with st.form("telemetrie_form"):
         year = st.selectbox("Sezóna", list(range(2020, 2026))[::-1], index=1)

@@ -15,7 +15,22 @@ def format_laptime_simple(seconds):
     return f"{m}:{s:06.3f}"
 
 def show_graf_kola():
-    st.subheader("Graf časů na kolo")
+    # --- Sjednocený podnadpis ---
+    st.markdown("""
+        <style>
+            .f1-subtitle {
+                text-align: left;
+                color: #fff;
+                font-size: 2.1em;
+                font-weight: 800;
+                margin-bottom: 0.20em;
+                margin-top: 0.05em;
+                letter-spacing: 0.1px;
+                font-family: 'Segoe UI', Arial, sans-serif;
+            }
+        </style>
+        <div class='f1-subtitle'>Graf časů na kolo</div>
+    """, unsafe_allow_html=True)
 
     # Výběr všech parametrů ve formuláři
     with st.form("graf_kola_form"):
@@ -110,5 +125,4 @@ def show_graf_kola():
 
         time.sleep(1)
         st.plotly_chart(fig, use_container_width=True)
-
 
