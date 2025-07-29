@@ -13,7 +13,7 @@ def show_telemetrie():
     st.markdown("""
         <style>
             .f1-subtitle {
-                text-align: left;
+                text-align: center;
                 color: #fff;
                 font-size: 2.1em;
                 font-weight: 800;
@@ -220,4 +220,5 @@ def show_telemetrie():
 
         time.sleep(1)
         st.plotly_chart(fig, use_container_width=True)
+
 

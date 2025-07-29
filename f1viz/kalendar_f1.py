@@ -38,7 +38,7 @@ def show_calendar():
     </style>
     """, unsafe_allow_html=True)
 
-    # --- NÁHRADA --- (stejný styl jako ostatní nadpisy)
+    # --- Nadpis stejného stylu jako ostatní podstránky ---
     st.markdown(f"<div class='f1-subtitle'>{next_race_name}</div>", unsafe_allow_html=True)
     st.markdown(f"<div class='nextup-title'>{next_race_title}</div>", unsafe_allow_html=True)
     st.markdown(
