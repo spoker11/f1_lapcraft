@@ -11,7 +11,7 @@ st.set_page_config(
     page_icon="🏎️",
 )
 
-# --- Globální styl (sjednocení vzhledu) ---
+# --- Globální styl (sjednocení vzhledu, podnadpisy, boxy, sekce) ---
 st.markdown("""
     <style>
         html, body, .main {background-color: #191c21 !important;}
@@ -23,6 +23,49 @@ st.markdown("""
             font-weight: 900;
             letter-spacing: 0.5px;
             font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .f1-subtitle {
+            text-align: center;
+            color: #fff;
+            font-size: 2.1em;
+            font-weight: 800;
+            margin-bottom: 0.25em;
+            margin-top: 0.07em;
+            letter-spacing: 0.1px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .f1-card {
+            background: #23242a;
+            border-radius: 18px;
+            box-shadow: 0 2px 24px #0007;
+            padding: 28px 28px 12px 28px;
+            margin: 0 auto 0.4em auto;
+            max-width: 960px;
+        }
+        .f1-section {
+            background: #23242a;
+            border-radius: 13px;
+            padding: 14px 16px 6px 16px;
+            margin: 0 auto 1.2em auto;
+            max-width: 900px;
+        }
+        .f1-table {
+            background: #23242a;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 0 auto 1.2em auto;
+            max-width: 1000px;
+        }
+        .f1-form {
+            background: #222325;
+            border-radius: 13px;
+            padding: 18px 20px 10px 20px;
+            margin: 0 auto 1.1em auto;
+            max-width: 650px;
+        }
+        .f1-divider {
+            border-top: 2px solid #2e3037;
+            margin: 1.5em 0;
         }
         div[data-testid="stTabs"] > div {justify-content: center;}
         button[data-baseweb="tab"] {

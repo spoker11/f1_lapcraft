@@ -84,23 +84,9 @@ def show_points_share():
         }
     ]
 
-    # --- Styl pro jednotný nadpis ---
-    st.markdown("""
-        <style>
-        .f1-subtitle {
-            text-align: center;
-            color: #fff;
-            font-size: 2.1em;
-            font-weight: 800;
-            margin-bottom: 0.20em;
-            margin-top: 0.05em;
-            letter-spacing: 0.1px;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
+    # --- Jednotný nadpis a box pro porovnání ---
     st.markdown("<div class='f1-subtitle'>Podíl bodů mezi týmovými kolegy</div>", unsafe_allow_html=True)
+    st.markdown("<div class='f1-card'>", unsafe_allow_html=True)
 
     # Přidáme klíč 'pct1' pro řazení
     for t in teams:
@@ -132,3 +118,5 @@ def show_points_share():
             st.markdown(f"<div style='font-size:1.7em; color:#888; font-weight:700'>{pct2:.0f}%</div>", unsafe_allow_html=True)
 
         st.markdown(f"<div style='height:16px;'></div>", unsafe_allow_html=True)
+
+    st.markdown("</div>", unsafe_allow_html=True)
