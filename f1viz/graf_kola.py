@@ -83,7 +83,7 @@ def show_graf_kola():
         compounds = filtered_laps['Compound'].values
 
         marker_colors = [color_dict.get(c, "#888") for c in compounds]
-        # --- UPRAVENO: hovertext pouze Čas ve formátu M:SS.sss a compound + emoji ---
+        # --- hovertext pouze Čas ve formátu M:SS.sss a compound + emoji ---
         hover_texts = [
             f"Kolo: {lap_numbers[i]}<br>Čas: {format_laptime_simple(lap_times[i])}<br>{compounds[i]} {emoji_dict.get(compounds[i], '')}"
             for i in range(len(lap_numbers))
