@@ -2,13 +2,13 @@ import streamlit as st
 import datetime
 
 def show_calendar():
-    # --- Nastav informace o dalším závodě ---
+    # --- Nastavení informací o dalším závodě ---
     next_race_name = "Velká cena Maďarska"
     next_race_title = "Začíná za:"
     next_race_date = "2025-08-03"
     next_race_time = "15:00"   # 24h format
 
-    # Sestav datetime pro závod
+    # Sestavení datetime pro závod
     race_dt = datetime.datetime.strptime(f"{next_race_date} {next_race_time}", "%Y-%m-%d %H:%M")
     now = datetime.datetime.now()
     time_left = race_dt - now
