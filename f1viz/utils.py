@@ -14,7 +14,7 @@ TEAM_COLORS = {
     "AlphaTauri": "#2B4562",  # Pro starší ročníky
 }
 
-# Barvy směsí pneumatik pro plotly
+# Barvy směsí pneumatik
 color_dict = {
     "SOFT": "#ff3655",      # červená
     "MEDIUM": "#ffe900",    # žlutá
