@@ -77,7 +77,7 @@ def show_graf_kola():
             st.warning("Pro tento filtr nejsou žádná kola k dispozici.")
             return
 
-        # Čísla kol převedena na celá čísla (žádné desetinné místo)
+        # Čísla kol převedena na celá čísla
         lap_numbers = filtered_laps['LapNumber'].astype(int).values
         lap_times = filtered_laps['LapTime'].dt.total_seconds().values
         compounds = filtered_laps['Compound'].values
