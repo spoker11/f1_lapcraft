@@ -2,12 +2,10 @@ import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
 import time
-
 from f1viz.data_loading import get_schedule, get_gp_names, get_session
 from f1viz.utils import TEAM_COLORS, color_dict, emoji_dict
 
 def format_laptime_simple(seconds):
-    # Funkce vrátí čas ve formátu M:SS.sss (např. 1:39.532)
     if np.isnan(seconds):
         return "-"
     m = int(seconds // 60)
@@ -15,7 +13,6 @@ def format_laptime_simple(seconds):
     return f"{m}:{s:06.3f}"
 
 def show_graf_kola():
-    # --- Sjednocený podnadpis ---
     st.markdown("""
         <style>
             .f1-subtitle {
@@ -32,32 +29,44 @@ def show_graf_kola():
         <div class='f1-subtitle'>Graf časů na kolo</div>
     """, unsafe_allow_html=True)
 
-    # Výběr všech parametrů ve formuláři
+    # 1. Výběr základních parametrů (uložíme do session_state)
     with st.form("graf_kola_form"):
         years = list(range(2020, 2026))[::-1]
-        year = st.selectbox("Sezóna", years, index=1)
+        year = st.selectbox("Sezóna", years, index=1, key="year")
         schedule = get_schedule(year)
         gp_names = get_gp_names(schedule)
-        gp = st.selectbox("Velká cena", gp_names)
+        gp = st.selectbox("Velká cena", gp_names, key="gp")
         sessions = ["FP1", "FP2", "FP3", "Qualifying", "Race"]
-        session_name = st.selectbox("Část víkendu", sessions, index=0)
-        session, err = get_session(year, gp, session_name, schedule)
-
-        drivers = session.laps['Driver'].unique().tolist() if session and not err else []
-        driver = st.selectbox("Jezdec", drivers if drivers else ["N/A"])
-
+        session_name = st.selectbox("Část víkendu", sessions, index=0, key="session_name")
         submit = st.form_submit_button("Načíst data")
 
-    if not submit:
+    if submit:
+        st.session_state["last_params"] = {
+            "year": year,
+            "gp": gp,
+            "session_name": session_name,
+        }
+
+    # Pokud uživatel vybral a potvrdil parametry, pokračujeme
+    params = st.session_state.get("last_params")
+    if not params:
         st.info("Vyber všechny možnosti a klikni na 'Načíst data'.")
         return
 
-    if err:
-        st.warning(err)
-        return
+    with st.spinner("Načítám session a jezdce…"):
+        session, err = get_session(params["year"], params["gp"], params["session_name"], get_schedule(params["year"]))
+        if err:
+            st.warning(err)
+            return
+        drivers = session.laps['Driver'].unique().tolist() if session else []
+        if not drivers:
+            st.warning("Nebyli nalezeni žádní jezdci pro tuto session.")
+            return
 
-    if not drivers or driver == "N/A":
-        st.info("Nebyli nalezeni žádní jezdci pro tuto session.")
+    # 2. Samostatný výběr jezdce (mimo formulář = zůstává na stránce!)
+    driver = st.selectbox("Jezdec", drivers, key="driver_pick")
+    if not driver:
+        st.warning("Vyber jezdce.")
         return
 
     laps = session.laps.pick_driver(driver)
@@ -77,13 +86,11 @@ def show_graf_kola():
             st.warning("Pro tento filtr nejsou žádná kola k dispozici.")
             return
 
-        # Čísla kol převedena na celá čísla
         lap_numbers = filtered_laps['LapNumber'].astype(int).values
         lap_times = filtered_laps['LapTime'].dt.total_seconds().values
         compounds = filtered_laps['Compound'].values
 
         marker_colors = [color_dict.get(c, "#888") for c in compounds]
-        # --- hovertext pouze Čas ve formátu M:SS.sss a compound + emoji ---
         hover_texts = [
             f"Kolo: {lap_numbers[i]}<br>Čas: {format_laptime_simple(lap_times[i])}<br>{compounds[i]} {emoji_dict.get(compounds[i], '')}"
             for i in range(len(lap_numbers))
@@ -125,4 +132,7 @@ def show_graf_kola():
 
         time.sleep(1)
         st.plotly_chart(fig, use_container_width=True)
+
+
+
 
