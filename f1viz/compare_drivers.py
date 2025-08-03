@@ -6,8 +6,8 @@ def show_points_share():
             "team": "Aston Martin",
             "driver1": "Fernando Alonso",
             "driver2": "Lance Stroll",
-            "points1": 16,
-            "points2": 20,
+            "points1": 26,
+            "points2": 26,
             "color": "#229971"
         },
         {
@@ -15,7 +15,7 @@ def show_points_share():
             "driver1": "Nico Hülkenberg",
             "driver2": "Gabriel Bortoleto",
             "points1": 37,
-            "points2": 6,
+            "points2": 14,
             "color": "#39FF14"
         },
         {
@@ -30,7 +30,7 @@ def show_points_share():
             "team": "Racing Bulls",
             "driver1": "Liam Lawson",
             "driver2": "Isack Hadjar",
-            "points1": 16,
+            "points1": 20,
             "points2": 22,
             "color": "#2853e8"
         },
@@ -38,7 +38,7 @@ def show_points_share():
             "team": "Red Bull",
             "driver1": "Max Verstappen",
             "driver2": "Júki Cunoda",
-            "points1": 185,
+            "points1": 187,
             "points2": 10,
             "color": "#1E41FF"
         },
@@ -62,15 +62,15 @@ def show_points_share():
             "team": "Mercedes",
             "driver1": "Kimi Antonelli",
             "driver2": "George Russell",
-            "points1": 63,
-            "points2": 157,
+            "points1": 64,
+            "points2": 172,
             "color": "#27F4D2"
         },
         {
             "team": "Ferrari",
             "driver1": "Charles Leclerc",
             "driver2": "Lewis Hamilton",
-            "points1": 139,
+            "points1": 151,
             "points2": 109,
             "color": "#FF2800"
         },
@@ -78,8 +78,8 @@ def show_points_share():
             "team": "McLaren",
             "driver1": "Oscar Piastri",
             "driver2": "Lando Norris",
-            "points1": 266,
-            "points2": 250,
+            "points1": 284,
+            "points2": 275,
             "color": "#FF8700"
         }
     ]
