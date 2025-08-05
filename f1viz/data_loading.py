@@ -1,6 +1,6 @@
 import fastf1
 import datetime
-import streamlit as st  # Důležité!
+import streamlit as st
 
 @st.cache_data(show_spinner="Načítám kalendář F1…")
 def get_schedule(year):
@@ -8,7 +8,7 @@ def get_schedule(year):
     return fastf1.get_event_schedule(year)
 
 @st.cache_data(show_spinner="Načítám seznam GP…")
-def get_gp_names(_schedule):  # <--- PODTRŽÍTKO!
+def get_gp_names(_schedule):
     """Vrátí seznam jmen závodů (bez testů, cachuje se podle obsahu schedule)."""
     return [gp for gp in _schedule['EventName'].tolist() if "Test" not in gp and "Testing" not in gp]
 
@@ -20,9 +20,9 @@ def get_location_slug(schedule, gp_name):
     return filtered['Location'].values[0].lower()  # např. 'bahrain', 'imola'
 
 @st.cache_data(show_spinner="Načítám session…")
-def get_session(year, gp_name, session_short, _schedule):  # <--- PODTRŽÍTKO!
+def get_session(year, gp_name, session_short, _schedule):
     """
-    Vrátí FastF1 session objekt a případnou chybovou hlášku (cachuje se podle všech vstupů).
+    Vrátí se FastF1 session objekt a případně se objevi chybovou hláška.
     Pokud se závod ještě nejel, nebo není termín, vrací None a hlášku.
     """
     filtered = _schedule[_schedule['EventName'] == gp_name]
@@ -36,7 +36,7 @@ def get_session(year, gp_name, session_short, _schedule):  # <--- PODTRŽÍTKO!
     datum_zavodu = datetime.datetime.fromisoformat(str(datum_zavodu)).replace(tzinfo=None)
     ted = datetime.datetime.now()
     if datum_zavodu > ted:
-        return None, "Tento závod se ještě nejel. Vyberte prosím jiný závod."
+        return None, "Tento závod se ještě nejel. Vyberte prosím jiný."
 
     slug = get_location_slug(_schedule, gp_name)
     if not slug:

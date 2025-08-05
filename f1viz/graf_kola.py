@@ -29,7 +29,7 @@ def show_graf_kola():
         <div class='f1-subtitle'>Graf časů na kolo</div>
     """, unsafe_allow_html=True)
 
-    # 1. Výběr základních parametrů (uložíme do session_state)
+    # Výběr základních parametrů (uložíme do session_state)
     with st.form("graf_kola_form"):
         years = list(range(2020, 2026))[::-1]
         year = st.selectbox("Sezóna", years, index=1, key="year")
@@ -47,7 +47,7 @@ def show_graf_kola():
             "session_name": session_name,
         }
 
-    # Pokud uživatel vybral a potvrdil parametry, pokračujeme
+    # Pokud uživatel vybral a potvrdil parametry, tak se pokračuje
     params = st.session_state.get("last_params")
     if not params:
         st.info("Vyber všechny možnosti a klikni na 'Načíst data'.")
@@ -63,7 +63,7 @@ def show_graf_kola():
             st.warning("Nebyli nalezeni žádní jezdci pro tuto session.")
             return
 
-    # 2. Samostatný výběr jezdce (mimo formulář = zůstává na stránce!)
+    # Samostatný výběr jezdce (mimo formulář = zůstává na stránce)
     driver = st.selectbox("Jezdec", drivers, key="driver_pick")
     if not driver:
         st.warning("Vyber jezdce.")
