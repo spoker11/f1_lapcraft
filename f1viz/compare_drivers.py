@@ -84,16 +84,16 @@ def show_points_share():
         }
     ]
 
-    # --- Jednotný nadpis a box pro porovnání ---
+    # Jednotný nadpis a box pro porovnání
     st.markdown("<div class='f1-subtitle'>Podíl bodů mezi týmovými kolegy</div>", unsafe_allow_html=True)
     st.markdown("<div class='f1-card'>", unsafe_allow_html=True)
 
-    # Přidaný klíč 'pct1' pro řazení
+    # Přidaný klíč pct1 (procentualni podil jezdce) pro řazení
     for t in teams:
         total = t["points1"] + t["points2"]
         t["pct1"] = 100 * t["points1"] / total if total else 0
 
-    # Seřadíme sestupně podle pct1
+    # Seřazeno sestupně podle pct1
     teams = sorted(teams, key=lambda x: x["pct1"], reverse=True)
 
     for t in teams:

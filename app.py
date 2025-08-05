@@ -5,13 +5,13 @@ from f1viz.t_performance import show_team_standings
 from f1viz.kalendar_f1 import show_calendar
 from f1viz.compare_drivers import show_points_share
 
-# --- Nastavení stránky, favicon a rozložení ---
+#Nastavení stránky, favicon a rozložení
 st.set_page_config(
     page_title="Lapcraft F1",
     page_icon="🏎️",
 )
 
-# --- Globální styl (sjednocení vzhledu, podnadpisy, boxy, sekce) ---
+#Globální styl (sjednocení vzhledu, podnadpisy, boxy, sekce)
 st.markdown("""
     <style>
         html, body, .main {background-color: #191c21 !important;}
@@ -80,13 +80,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Jednotný nadpis (refresh při kliknutí) ---
+#Jednotný nadpis (refresh při kliknutí)
 st.markdown(
     "<div class='f1-title'><a href='/' style='color: #e30613; text-decoration: none;'>Lapcraft F1</a></div>",
     unsafe_allow_html=True
 )
 
-# --- Hlavní navigace ---
+#Hlavní navigace
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "Graf časů",
     "Telemetrie",
@@ -106,7 +106,7 @@ with tab4:
 with tab5:
     show_points_share()
 
-# --- Copyright ---
+#Copyright
 st.markdown(
     "<p style='text-align: center; color: #888888; font-size: 15px; margin-top: 36px;'>"
     "© 2025 Jaroslav Chládek | Lapcraft F1"
