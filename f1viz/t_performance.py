@@ -32,7 +32,7 @@ data = {
 }
 
 def show_team_standings():
-    # --- Sjednocený podnadpis ---
+    #Sjednocený podnadpis
     st.markdown("""
         <style>
             .f1-subtitle {

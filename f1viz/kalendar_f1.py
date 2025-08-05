@@ -2,13 +2,13 @@ import streamlit as st
 import datetime
 
 def show_calendar():
-    # --- Nastavení informací o dalším závodě ---
+    #Nastavení informací o dalším závodě
     next_race_name = "Velká cena Nizozemska"
     next_race_title = "Začíná po letní přestávce za:"
     next_race_date = "2025-08-31"
     next_race_time = "15:00"   # 24h format
 
-    # Sestavení datetime pro závod
+    #Sestavení datetime pro závod
     race_dt = datetime.datetime.strptime(f"{next_race_date} {next_race_time}", "%Y-%m-%d %H:%M")
     now = datetime.datetime.now()
     time_left = race_dt - now
@@ -38,7 +38,7 @@ def show_calendar():
     </style>
     """, unsafe_allow_html=True)
 
-    # --- Nadpis stejného stylu jako ostatní podstránky ---
+    #Nadpis stejného stylu jako ostatní podstránky
     st.markdown(f"<div class='f1-subtitle'>{next_race_name}</div>", unsafe_allow_html=True)
     st.markdown(f"<div class='nextup-title'>{next_race_title}</div>", unsafe_allow_html=True)
     st.markdown(
