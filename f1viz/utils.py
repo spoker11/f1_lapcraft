@@ -25,7 +25,7 @@ color_dict = {
     None: "#888888"
 }
 
-# Emojis ke směsím (volitelné, pro tooltipy)
+# Emojis ke směsím
 emoji_dict = {
     "SOFT": "🔴",
     "MEDIUM": "🟡",

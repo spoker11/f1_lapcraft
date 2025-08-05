@@ -25,7 +25,7 @@ def show_telemetrie():
         <div class='f1-subtitle'>Porovnání telemetrie</div>
     """, unsafe_allow_html=True)
 
-    # --- 1. Výběr základních parametrů ---
+    #Výběr základních parametrů
     with st.form("telemetrie_form"):
         year = st.selectbox("Sezóna", list(range(2020, 2026))[::-1], index=1, key="tele_year")
         schedule = get_schedule(year)
@@ -34,7 +34,7 @@ def show_telemetrie():
         session_type = st.selectbox("Část víkendu", ["FP1", "FP2", "FP3", "Qualifying", "Race"], key="tele_session")
         submit = st.form_submit_button("Načíst data")
 
-    # --- 2. Pokud stisknuto, načti session a seznam jezdců ---
+    # Pokud stisknuto, načte se session a seznam jezdců
     if submit:
         st.session_state["telemetry_params"] = {
             "year": year,
@@ -58,7 +58,7 @@ def show_telemetrie():
             st.warning("Nejsou dostupná data pro jezdce.")
             return
 
-    # --- 3. Výběr jezdců a kol (mimo form!) ---
+    #Výběr jezdců a kol
     col1, col2 = st.columns(2)
     with col1:
         driver1 = st.selectbox("První jezdec", drivers, key="tele_driver1")
@@ -92,7 +92,7 @@ def show_telemetrie():
             key=f"tele_lap2_{driver2}"
         )
 
-    # Zobrazit graf pouze pokud je vše validní
+    # Zobrazi se graf pouze pokud je vše validní
     if not (driver1 and driver2 and laps1 is not None and laps2 is not None and lap1 in lap_nums1 and lap2 in lap_nums2):
         st.info("Vyber jezdce a kola.")
         return
