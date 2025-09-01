@@ -6,8 +6,8 @@ def show_points_share():
             "team": "Aston Martin",
             "driver1": "Fernando Alonso",
             "driver2": "Lance Stroll",
-            "points1": 26,
-            "points2": 26,
+            "points1": 30,
+            "points2": 32,
             "color": "#229971"
         },
         {
@@ -31,22 +31,22 @@ def show_points_share():
             "driver1": "Liam Lawson",
             "driver2": "Isack Hadjar",
             "points1": 20,
-            "points2": 22,
+            "points2": 37,
             "color": "#2853e8"
         },
         {
             "team": "Red Bull",
             "driver1": "Max Verstappen",
             "driver2": "Júki Cunoda",
-            "points1": 187,
-            "points2": 10,
+            "points1": 205,
+            "points2": 12,
             "color": "#1E41FF"
         },
         {
             "team": "Williams",
             "driver1": "Alex Albon",
             "driver2": "Carlos Sainz",
-            "points1": 54,
+            "points1": 64,
             "points2": 16,
             "color": "#00BFFF"
         },
@@ -54,8 +54,8 @@ def show_points_share():
             "team": "Haas",
             "driver1": "Esteban Ocon",
             "driver2": "Oliver Bearman",
-            "points1": 27,
-            "points2": 8,
+            "points1": 28,
+            "points2": 16,
             "color": "#B6BABD"
         },
         {
@@ -63,7 +63,7 @@ def show_points_share():
             "driver1": "Kimi Antonelli",
             "driver2": "George Russell",
             "points1": 64,
-            "points2": 172,
+            "points2": 184,
             "color": "#27F4D2"
         },
         {
@@ -78,7 +78,7 @@ def show_points_share():
             "team": "McLaren",
             "driver1": "Oscar Piastri",
             "driver2": "Lando Norris",
-            "points1": 284,
+            "points1": 309,
             "points2": 275,
             "color": "#FF8700"
         }
