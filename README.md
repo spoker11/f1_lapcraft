@@ -45,7 +45,7 @@ Lapcraft F1 je open-source analytická platforma pro vizualizaci a porovnání d
 
         -Barevná vizualizace a jednoduché porovnání
 
-🚀 Jak aplikaci spustit
+🚀 Jak aplikaci spustit?
 
 Lapcraft F1 je k dispozici online a zdarma zde:
 👉 https://f1-lapcraft.streamlit.app/
