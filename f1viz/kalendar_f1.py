@@ -3,7 +3,7 @@ import datetime
 
 def show_calendar():
     #Nastavení informací o dalším závodě
-    next_race_name = "Velká cena Ázerbájdžánu 🇦🇿"
+    next_race_name = "Velká cena Singapuru 🇸🇬"
     next_race_title = "Začíná za:"
     next_race_date = "2025-10-05"
     next_race_time = "14:00"   # 24h format
