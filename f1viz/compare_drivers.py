@@ -30,16 +30,16 @@ def show_points_share():
             "team": "Racing Bulls",
             "driver1": "Liam Lawson",
             "driver2": "Isack Hadjar",
-            "points1": 20,
-            "points2": 38,
+            "points1": 30,
+            "points2": 39,
             "color": "#2853e8"
         },
         {
             "team": "Red Bull",
             "driver1": "Max Verstappen",
             "driver2": "Júki Cunoda",
-            "points1": 230,
-            "points2": 12,
+            "points1": 255,
+            "points2": 20,
             "color": "#1E41FF"
         },
         {
@@ -47,7 +47,7 @@ def show_points_share():
             "driver1": "Alex Albon",
             "driver2": "Carlos Sainz",
             "points1": 70,
-            "points2": 16,
+            "points2": 31,
             "color": "#00BFFF"
         },
         {
@@ -62,16 +62,16 @@ def show_points_share():
             "team": "Mercedes",
             "driver1": "Kimi Antonelli",
             "driver2": "George Russell",
-            "points1": 66,
-            "points2": 194,
+            "points1": 78,
+            "points2": 212,
             "color": "#27F4D2"
         },
         {
             "team": "Ferrari",
             "driver1": "Charles Leclerc",
             "driver2": "Lewis Hamilton",
-            "points1": 163,
-            "points2": 117,
+            "points1": 165,
+            "points2": 121,
             "color": "#FF2800"
         },
         {
@@ -79,7 +79,7 @@ def show_points_share():
             "driver1": "Oscar Piastri",
             "driver2": "Lando Norris",
             "points1": 324,
-            "points2": 293,
+            "points2": 299,
             "color": "#FF8700"
         }
     ]
