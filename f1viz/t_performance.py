@@ -17,7 +17,7 @@ TEAM_COLORS = {
 
 data = {
     "Tým": [
-        "McLaren🏆️",
+        "McLaren",
         "Scuderia Ferrari",
         "Mercedes-AMG Petronas Motorsport",
         "Red Bull Racing",
