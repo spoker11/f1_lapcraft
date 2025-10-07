@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 
 TEAM_COLORS = {
-    "McLaren": "#FF8700",
+    "McLaren🏆️": "#FF8700",
     "Scuderia Ferrari": "#FF2800",
     "Mercedes-AMG Petronas Motorsport": "#27F4D2",
     "Red Bull Racing": "#1E41FF",
@@ -17,7 +17,7 @@ TEAM_COLORS = {
 
 data = {
     "Tým": [
-        "McLaren",
+        "McLaren🏆️",
         "Scuderia Ferrari",
         "Mercedes-AMG Petronas Motorsport",
         "Red Bull Racing",
