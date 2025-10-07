@@ -17,7 +17,7 @@ TEAM_COLORS = {
 
 data = {
     "Tým": [
-        "McLaren",
+        "McLaren🏆️",
         "Scuderia Ferrari",
         "Mercedes-AMG Petronas Motorsport",
         "Red Bull Racing",
@@ -28,7 +28,7 @@ data = {
         "Haas F1 Team",
         "Alpine F1 Team"
     ],
-    "Body": [623, 286, 290, 272, 101, 55, 72, 62, 44, 20]
+    "Body": [650, 298, 325, 290, 102, 55, 72, 68, 46, 20]
 }
 
 def show_team_standings():
