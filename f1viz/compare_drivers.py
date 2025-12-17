@@ -6,23 +6,23 @@ def show_points_share():
             "team": "Aston Martin",
             "driver1": "Fernando Alonso",
             "driver2": "Lance Stroll",
-            "points1": 36,
-            "points2": 32,
+            "points1": 0,
+            "points2": 0,
             "color": "#229971"
         },
         {
             "team": "Kick Sauber",
             "driver1": "Nico Hülkenberg",
             "driver2": "Gabriel Bortoleto",
-            "points1": 37,
-            "points2": 18,
+            "points1": 0,
+            "points2": 0,
             "color": "#39FF14"
         },
         {
             "team": "Alpine",
             "driver1": "Pierre Gasly",
             "driver2": "Franco Colapinto",
-            "points1": 20,
+            "points1": 0,
             "points2": 0,
             "color": "#FFB6C1"
         },
@@ -30,56 +30,56 @@ def show_points_share():
             "team": "Racing Bulls",
             "driver1": "Liam Lawson",
             "driver2": "Isack Hadjar",
-            "points1": 30,
-            "points2": 39,
+            "points1": 0,
+            "points2": 0,
             "color": "#2853e8"
         },
         {
             "team": "Red Bull",
             "driver1": "Max Verstappen",
             "driver2": "Júki Cunoda",
-            "points1": 273,
-            "points2": 20,
+            "points1": 0,
+            "points2": 0,
             "color": "#1E41FF"
         },
         {
             "team": "Williams",
             "driver1": "Alex Albon",
             "driver2": "Carlos Sainz",
-            "points1": 70,
-            "points2": 32,
+            "points1": 0,
+            "points2": 0,
             "color": "#00BFFF"
         },
         {
             "team": "Haas",
             "driver1": "Esteban Ocon",
             "driver2": "Oliver Bearman",
-            "points1": 28,
-            "points2": 18,
+            "points1": 0,
+            "points2": 0,
             "color": "#B6BABD"
         },
         {
             "team": "Mercedes",
             "driver1": "Kimi Antonelli",
             "driver2": "George Russell",
-            "points1": 88,
-            "points2": 237,
+            "points1": 0,
+            "points2": 0,
             "color": "#27F4D2"
         },
         {
             "team": "Ferrari",
             "driver1": "Charles Leclerc",
             "driver2": "Lewis Hamilton",
-            "points1": 173,
-            "points2": 125,
+            "points1": 0,
+            "points2": 0,
             "color": "#FF2800"
         },
         {
             "team": "McLaren",
             "driver1": "Oscar Piastri",
             "driver2": "Lando Norris",
-            "points1": 336,
-            "points2": 314,
+            "points1": 0,
+            "points2": 0,
             "color": "#FF8700"
         }
     ]
