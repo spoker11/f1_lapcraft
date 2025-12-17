@@ -109,7 +109,7 @@ with tab5:
 #Copyright
 st.markdown(
     "<p style='text-align: center; color: #888888; font-size: 15px; margin-top: 36px;'>"
-    "© 2025 Jaroslav Chládek | Lapcraft F1"
+    "© 2026 Jaroslav Chládek | Lapcraft F1"
     "</p>",
     unsafe_allow_html=True
 )
