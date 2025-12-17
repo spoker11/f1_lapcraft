@@ -5,7 +5,7 @@ def show_calendar():
     #Nastavení informací o dalším závodě
     next_race_name = "Velká cena Austrálie 🇦🇺"
     next_race_title = "Začíná za:"
-    next_race_date = "2025-03-08"
+    next_race_date = "2026-03-08"
     next_race_time = "15:00"   # 24h format
 
     #Sestavení datetime pro závod
